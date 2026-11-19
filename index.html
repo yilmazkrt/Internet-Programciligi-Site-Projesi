@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoldCut Barber Studio | Randevu Sistemi</title>
+    <!-- Tasarım dosyamızı bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ÜST MENÜ (NAVBAR) -->
+    <header class="navbar">
+        <div class="logo">BOSS<span>BERBER</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#anasayfa">Ana Sayfa</a></li>
+                <li><a href="#hizmetler">Hizmetler</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- KARŞILAMA EKRANI (HERO) -->
+    <section id="anasayfa" class="hero">
+        <div class="hero-content">
+            <h1>Tarzını Yeniden Keşfet</h1>
+            <p>Modern kesimler, klasik dokunuşlar ve sana özel bakım deneyimi için yerini hemen ayırt.</p>
+            <a href="#randevu" class="btn-primary">Hemen Randevu Al</a>
+        </div>
+    </section>
+
+    <!-- HİZMETLER BÖLÜMÜ -->
+    <section id="hizmetler" class="services">
+        <div class="section-divider">
+            <span class="divider-line"></span>
+            <div class="scissor-badge">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="6" cy="6" r="3"></circle>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+                    <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+                    <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+                </svg>
+            </div>
+            <span class="divider-line"></span>
+        </div>
+        <h2 class="section-title">Hizmetlerimiz</h2>
+        <p class="section-subtitle">Klasik ve modern tekniklerle özenli bakım</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Saç Kesimi</h3>
+                <p class="duration">30 Dakika</p>
+                <p class="desc">Yüz şekline ve tarzına uygun modern veya klasik saç kesimi ve yıkama.</p>
+                <span class="price">350 TL</span>
+            </div>
+
+            <div class="service-card">
+                <h3>Sakal Tıraşı</h3>
+                <p class="duration">15 Dakika</p>
+                <p class="desc">Sıcak havlu uygulaması, ustura ile keskin hatlar ve bakım yağı.</p>
+                <span class="price">200 TL</span>
+            </div>
+
+            <div class="service-card">
+                <h3>Saç + Sakal</h3>
+                <p class="duration">45 Dakika</p>
+                <p class="desc">Bütünlük sağlayan tam saç kesimi, sakal şekillendirme ve fön.</p>
+                <span class="price">500 TL</span>
+            </div>
+
+            <div class="service-card">
+                <h3>Saç + Sakal + Cilt Bakımı</h3>
+                <p class="duration">60 Dakika</p>
+                <p class="desc">Saç kesimi, sakal şekillendirme, buharlı bakım ve ferahlatıcı maske.</p>
+                <span class="price">600 TL</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Randevu Almak -->
+    <section id="randevu" class="appointment">
+        <h2 class="section-title">Randevu Al</h2>
+        <p class="section-subtitle">Uygun gün ve saati seç, koltuğunu ayırt</p>
+
+        <form id="appointmentForm" class="appointment-form">
+            <div class="form-group">
+                <label for="name">Ad Soyad</label>
+                <input type="text" id="name" placeholder="Örn: Yılmaz Kurt" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Telefon Numarası</label>
+                <input type="tel" id="phone" placeholder="05XX XXX XX XX" required>
+            </div>
+
+            <div class="form-group">
+                <div class="form-group">
+                <label>Usta Seçimi</label>
+                <div class="barber-options">
+                    <button type="button" class="barber-btn" data-barber="Yılmaz Kurt">
+                        <span class="barber-name">Yılmaz Kurt</span>
+                        <span class="barber-role">Saç & Sakal Uzmanı</span>
+                    </button>
+                    <button type="button" class="barber-btn" data-barber="Engin Koni">
+                        <span class="barber-name">Engin Koni</span>
+                        <span class="barber-role">Saç & Sakal Uzmanı</span>
+                    </button>
+                </div>
+            </div>
+                <label for="service">Hizmet Seçimi</label>
+                <select id="service" required>
+                    <option value="">Hizmet seçiniz...</option>
+                    <option value="Saç Kesimi (350 TL)">Saç Kesimi - 350 TL</option>
+                    <option value="Sakal Tıraşı (200 TL)">Sakal Tıraşı - 200 TL</option>
+                    <option value="Saç + Sakal (500 TL)">Saç + Sakal - 500 TL</option>
+                    <option value="Saç + Sakal + Cilt Bakımı (600 TL)">Saç + Sakal + Cilt Bakımı - 600 TL</option>
+                </select>
+            </div>
+
+            <div class="form-group date-picker-wrapper">
+                <label for="dateInput">Tarih Seçimi</label>
+                <input type="text" id="dateInput" placeholder="Tarih seçmek için tıkla" readonly required>
+
+                <!-- Tıklayınca açılacak özel takvim kutusu -->
+                <div id="calendarPopup" class="calendar-popup">
+                    <div class="calendar-header">
+                        <button type="button" id="prevMonth" class="cal-nav-btn">&lt;</button>
+                        <span id="monthYearLabel"></span>
+                        <button type="button" id="nextMonth" class="cal-nav-btn">&gt;</button>
+                    </div>
+
+                    <div class="calendar-weekdays">
+                        <span>Pzt</span>
+                        <span>Sal</span>
+                        <span>Çar</span>
+                        <span>Per</span>
+                        <span>Cum</span>
+                        <span>Cmt</span>
+                        <span>Paz</span>
+                    </div>
+
+                    <div id="calendarDays" class="calendar-days"></div>
+                </div>
+            </div>
+
+           <div class="form-group">
+                <label>Saat Seçimi</label>
+                <div id="timeSlots" class="time-slots">
+                    <p class="time-hint">Önce bir tarih seçiniz.</p>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Randevuyu Onayla</button>
+        </form>
+
+      
+        <div id="appointmentResult" class="appointment-result"></div>
+    </section>
+    <!-- İletisim ve Alt B -->
+    <footer id="iletisim" class="footer">
+        <div class="footer-grid">
+            <div class="footer-box">
+                <div class="logo">BOSS<span>BERBER</span></div>
+                <p class="footer-desc">Klasik berber geleneğini modern çizgilerle buluşturan bakım stüdyosu.</p>
+            </div>
+
+            <div class="footer-box">
+                <h4>İletişim</h4>
+                <p>Adres: Konak Mah Cezaevi Cad No-2,Cizre/Şırnak</p>
+                <p>Telefon: 0542 258 20 92</p>
+                <p>E-posta: bossberber@gmail.com</p>
+            </div>
+
+            <div class="footer-box">
+                <h4>Çalışma Saatleri</h4>
+                <p>Hafta İçi: 09:30 - 20:00</p>
+                <p>Cumartesi: 09:30 - 21:00</p>
+                <p>Pazar: Kapalı</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Boss Barber Studio. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Javascript dosyası -->
+    <script src="script.js"></script>
+</body>
+</html>
